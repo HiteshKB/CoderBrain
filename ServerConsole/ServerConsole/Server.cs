@@ -39,13 +39,14 @@ public class SynchronousSocketListener
             Socket handler = listener.Accept();
             data = null;
 
-            while (message != "close")
-            {      
+            do
+            {
                 // An incoming connection needs to be processed.  
                 //while (true)
                 //{
-                    int bytesRec = handler.Receive(bytes);
-                    data = Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                int bytesRec = handler.Receive(bytes);
+                data = Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                message = Math.Tan(Double.Parse(data) * Math.PI / 180).ToString();
                 //    if (data.IndexOf("<EOF>") > -1)
                 //    {
                 //        break;
@@ -54,12 +55,11 @@ public class SynchronousSocketListener
 
                 // Show the data on the console.  
                 Console.WriteLine("{0}", data);
-                message = Console.ReadLine();
                 // Echo the data back to the client.  
                 byte[] msg = Encoding.ASCII.GetBytes(message);
 
                 handler.Send(msg);
-            }
+            } while (data != "360");
 
             handler.Shutdown(SocketShutdown.Both);
             handler.Close();
