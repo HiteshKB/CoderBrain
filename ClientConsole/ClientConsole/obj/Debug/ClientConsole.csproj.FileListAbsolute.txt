@@ -1,0 +1,7 @@
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\bin\Debug\ClientConsole.exe.config
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\bin\Debug\ClientConsole.exe
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\bin\Debug\ClientConsole.pdb
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\obj\Debug\ClientConsole.csproj.CoreCompileInputs.cache
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\obj\Debug\ClientConsole.exe
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\obj\Debug\ClientConsole.pdb
+E:\Coding\CoderBrain\ClientConsole\ClientConsole\obj\Debug\ClientConsole.csprojResolveAssemblyReference.cache
