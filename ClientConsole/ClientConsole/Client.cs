@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using Microsoft.Office.Interop.Excel;
 using System.Threading;
+using System.Configuration;
 
 public class SynchronousSocketClient
 {
@@ -56,7 +57,6 @@ public class SynchronousSocketClient
             {
                 Console.WriteLine("Unexpected exception : {0}", e.ToString());
             }
-
         }
         catch (Exception e)
         {
@@ -109,10 +109,11 @@ public class SynchronousSocketClient
             vertAxis.MinimumScale = -80;
             vertAxis.MajorUnit = 20;
             vertAxis.MinorUnit = 4;
-            chartPage.Export(@"E:\Coding\CoderBrain\ClientConsole\ClientConsole\TanChart.bmp",
-               "BMP", Type.Missing);
 
-            worKbooK.SaveAs(@"E:\Coding\CoderBrain\ClientConsole\ClientConsole\TanChart.xlsx");
+            string path = ConfigurationManager.AppSettings["Path"];
+            chartPage.Export(path+"TanChart.bmp", "BMP", Type.Missing);
+
+            worKbooK.SaveAs(path + "TanChart.xlsx");
             excel.Quit();
         }
         catch (Exception e)
